@@ -1,9 +1,9 @@
 {
-  "name": "HomeOS",
+  "name": "HomeOS WS-06A",
   "short_name": "HomeOS",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f7f4ee",
-  "theme_color": "#f7f4ee",
+  "background_color": "#f5f1e8",
+  "theme_color": "#f5f1e8",
   "icons": []
 }
