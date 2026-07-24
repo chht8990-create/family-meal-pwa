@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://homeos.local/schema/cooking-session.schema.json",
+  "title": "HomeOS CookingSession",
+  "type": "object",
+  "required": [
+    "id",
+    "mealPlanId",
+    "recipeId",
+    "recipeVersion",
+    "currentStepIndex",
+    "status",
+    "stepProgress",
+    "activeTimerIds",
+    "keepAwakeRequested",
+    "version",
+    "startedAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "mealPlanId": {
+      "type": "string"
+    },
+    "recipeId": {
+      "type": "string"
+    },
+    "recipeVersion": {
+      "type": "string"
+    },
+    "currentStepIndex": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status": {
+      "enum": [
+        "active",
+        "paused",
+        "completed",
+        "cancelled",
+        "abandoned"
+      ]
+    },
+    "stepProgress": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "stepOrder",
+          "skipped"
+        ],
+        "properties": {
+          "stepOrder": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "enteredAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "completedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "skipped": {
+            "type": "boolean"
+          },
+          "timerStarted": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "activeTimerIds": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "keepAwakeRequested": {
+      "type": "boolean"
+    },
+    "startedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "pausedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "resumedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "completedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    }
+  }
+}

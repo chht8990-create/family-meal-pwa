@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://homeos.local/schema/cooking-timer.schema.json",
+  "title": "HomeOS CookingTimer",
+  "type": "object",
+  "required": [
+    "id",
+    "sessionId",
+    "stepOrder",
+    "label",
+    "durationSeconds",
+    "remainingSeconds",
+    "status",
+    "version",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "sessionId": {
+      "type": "string"
+    },
+    "stepOrder": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "label": {
+      "type": "string"
+    },
+    "durationSeconds": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "remainingSeconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status": {
+      "enum": [
+        "idle",
+        "running",
+        "paused",
+        "completed",
+        "cancelled"
+      ]
+    },
+    "startedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "endsAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "pausedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

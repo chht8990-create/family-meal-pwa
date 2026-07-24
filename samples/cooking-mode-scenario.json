@@ -1,0 +1,27 @@
+{
+  "recipeId": "recipe_jeyuk_bokkeum",
+  "recipeVersion": "1.0.0",
+  "mealPlanId": "meal_2026_07_25_dinner",
+  "session": {
+    "status": "active",
+    "currentStepIndex": 1,
+    "display": {
+      "step": "2/4",
+      "title": "고기 볶기",
+      "instruction": "고기를 두 번으로 나눠 팬에 펼쳐 넣고, 처음 1분은 건드리지 않은 뒤 뒤집어가며 볶는다.",
+      "heat": "강불",
+      "minutes": 6,
+      "completionCue": "고기 겉면이 대부분 익고 붉은색이 거의 사라진다."
+    },
+    "actions": [
+      "이전",
+      "6분 타이머",
+      "다음"
+    ]
+  },
+  "completion": {
+    "requiresConfirmation": true,
+    "inventorySideEffect": "InventoryConsumed",
+    "mealState": "cooked"
+  }
+}

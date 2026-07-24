@@ -1,22 +1,23 @@
-# HomeOS WS-04 Shopping & Inventory Link
+# HomeOS WS-05 Cooking Mode
 
-레시피 필요량, 현재 재고, 장보기, 구매 완료와 재고 반영을 연결하는 공식 설계 패키지입니다.
+요리 중 실제로 사용할 수 있는 단계별 조리 화면의 공식 설계 및 구현 기준 패키지입니다.
 
 ## 구성
 
-- docs/WS04_SHOPPING_INVENTORY_FOUNDATION.md
-- docs/SHORTAGE_CALCULATION_RULES.md
-- docs/UNIT_AND_PURCHASE_RULES.md
-- docs/MERGE_AND_SOURCE_RULES.md
-- docs/PURCHASE_AND_INVENTORY_RULES.md
-- docs/WS04_COMPLETION_REPORT.md
-- schemas/inventory-item.schema.json
-- schemas/shopping-item.schema.json
-- schemas/inventory-transaction.schema.json
-- src/shopping-inventory-domain.ts
-- src/inventory-transaction-engine.ts
-- tests/WS04_TEST_PLAN.md
-- samples/shopping-inventory-scenarios.json
+- docs/WS05_COOKING_MODE_FOUNDATION.md
+- docs/COOKING_SESSION_MODEL.md
+- docs/STEP_NAVIGATION_RULES.md
+- docs/TIMER_POLICY.md
+- docs/KEEP_AWAKE_AND_RESUME_POLICY.md
+- docs/ACCESSIBILITY_AND_SAFETY.md
+- docs/INTEGRATION_RULES.md
+- docs/WS05_COMPLETION_REPORT.md
+- schemas/cooking-session.schema.json
+- schemas/cooking-timer.schema.json
+- src/cooking-session-engine.ts
+- src/cooking-timer-engine.ts
+- tests/WS05_TEST_PLAN.md
+- samples/cooking-mode-scenario.json
 
 ## 현재 기준점
 
@@ -24,4 +25,5 @@
 - WS-02 Recipe Domain Foundation: COMPLETE
 - WS-03 Meal State & Real-Life Exceptions: COMPLETE
 - WS-04 Shopping & Inventory Link: COMPLETE
-- Next: WS-05 Cooking Mode
+- WS-05 Cooking Mode: COMPLETE
+- Next: WS-06 MVP Hardening & Integrated Prototype
