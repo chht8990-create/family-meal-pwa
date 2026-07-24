@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://homeos.local/schema/shopping-item.schema.json",
+  "title": "HomeOS ShoppingItem",
+  "type": "object",
+  "required": [
+    "id",
+    "ingredientId",
+    "requiredQuantity",
+    "plannedPurchaseQuantity",
+    "unit",
+    "status",
+    "checked",
+    "sourceMealPlanIds",
+    "sourceRecipeIds",
+    "version",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "ingredientId": {
+      "type": "string"
+    },
+    "requiredQuantity": {
+      "type": "number",
+      "minimum": 0
+    },
+    "plannedPurchaseQuantity": {
+      "type": "number",
+      "minimum": 0
+    },
+    "purchasedQuantity": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "unit": {
+      "type": "string"
+    },
+    "purchaseUnit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "purchaseSize": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "status": {
+      "enum": [
+        "generated",
+        "manual",
+        "ready",
+        "checked",
+        "purchased",
+        "stored",
+        "cancelled"
+      ]
+    },
+    "checked": {
+      "type": "boolean"
+    },
+    "sourceMealPlanIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sourceRecipeIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "manualSourceNotes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "priceKrw": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "userAdjustedPurchaseQuantity": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

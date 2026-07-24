@@ -1,0 +1,52 @@
+{
+  "scenarios": [
+    {
+      "id": "shortage_pork",
+      "requirements": [
+        {
+          "ingredientId": "ingredient_pork_shoulder",
+          "quantity": 1200,
+          "unit": "g"
+        }
+      ],
+      "inventory": [
+        {
+          "ingredientId": "ingredient_pork_shoulder",
+          "quantity": 500,
+          "unit": "g",
+          "status": "normal"
+        }
+      ],
+      "expected": {
+        "shortageQuantity": 700
+      }
+    },
+    {
+      "id": "purchase_rounding",
+      "shortageQuantity": 700,
+      "purchaseRule": {
+        "purchaseUnit": "pack",
+        "purchaseSize": 600
+      },
+      "expected": {
+        "plannedPurchaseQuantity": 1200
+      }
+    },
+    {
+      "id": "checked_not_stored",
+      "shoppingStatus": "checked",
+      "expected": {
+        "inventoryIncreased": false
+      }
+    },
+    {
+      "id": "purchase_complete",
+      "shoppingStatus": "stored",
+      "purchasedQuantity": 2,
+      "unit": "pack",
+      "expected": {
+        "inventoryIncreased": true
+      }
+    }
+  ]
+}

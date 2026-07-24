@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://homeos.local/schema/inventory-item.schema.json",
+  "title": "HomeOS InventoryItem",
+  "type": "object",
+  "required": [
+    "id",
+    "ingredientId",
+    "quantity",
+    "unit",
+    "status",
+    "version",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "ingredientId": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "number",
+      "minimum": 0
+    },
+    "unit": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "normal",
+        "low",
+        "out",
+        "expired",
+        "discarded"
+      ]
+    },
+    "minimumQuantity": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "expiryDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "storageLocation": {
+      "enum": [
+        "pantry",
+        "refrigerator",
+        "freezer",
+        "other"
+      ]
+    },
+    "purchasedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "sourceTransactionId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

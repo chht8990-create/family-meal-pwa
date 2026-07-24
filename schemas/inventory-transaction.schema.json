@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://homeos.local/schema/inventory-transaction.schema.json",
+  "title": "HomeOS InventoryTransaction",
+  "type": "object",
+  "required": [
+    "id",
+    "ingredientId",
+    "type",
+    "quantity",
+    "unit",
+    "occurredAt",
+    "source",
+    "idempotencyKey",
+    "reversed"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "ingredientId": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "purchase",
+        "consume",
+        "manual_add",
+        "manual_remove",
+        "discard",
+        "reversal",
+        "adjustment"
+      ]
+    },
+    "quantity": {
+      "type": "number"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "enum": [
+        "shopping",
+        "meal",
+        "manual",
+        "migration",
+        "system"
+      ]
+    },
+    "sourceEntityId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "correlationId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "idempotencyKey": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reversed": {
+      "type": "boolean"
+    },
+    "reversedByTransactionId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}
