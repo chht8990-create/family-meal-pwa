@@ -1,0 +1,233 @@
+{
+  "id": "recipe_kimchi_jjigae",
+  "name": "김치찌개",
+  "description": "잘 익은 김치와 돼지고기로 끓이는 기본 가정식 찌개",
+  "version": "1.0.0",
+  "status": "active",
+  "baseServings": 6,
+  "difficulty": "normal",
+  "time": {
+    "prepMinutes": 10,
+    "cookMinutes": 30,
+    "restMinutes": 0,
+    "totalMinutes": 40
+  },
+  "ingredients": [
+    {
+      "ingredientId": "ingredient_kimchi",
+      "name": "신김치",
+      "group": "main",
+      "quantity": 900,
+      "unit": "g",
+      "scaling": {
+        "mode": "linear",
+        "step": 50
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_pork_belly",
+      "name": "돼지고기",
+      "group": "main",
+      "quantity": 600,
+      "unit": "g",
+      "scaling": {
+        "mode": "linear",
+        "step": 50
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_tofu",
+      "name": "두부",
+      "group": "main",
+      "quantity": 2,
+      "unit": "pack",
+      "scaling": {
+        "mode": "discrete",
+        "step": 1,
+        "rounding": "up"
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_green_onion",
+      "name": "대파",
+      "group": "main",
+      "quantity": 1.5,
+      "unit": "stalk",
+      "scaling": {
+        "mode": "discrete",
+        "step": 0.5,
+        "rounding": "up"
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_water",
+      "name": "물",
+      "group": "main",
+      "quantity": 1800,
+      "unit": "ml",
+      "scaling": {
+        "mode": "linear",
+        "step": 50
+      },
+      "inventoryTracked": false,
+      "shoppingEligible": false
+    },
+    {
+      "ingredientId": "ingredient_chili_powder",
+      "name": "고춧가루",
+      "group": "seasoning",
+      "quantity": 2,
+      "unit": "tbsp",
+      "scaling": {
+        "mode": "capped",
+        "maxQuantity": 3.5,
+        "step": 0.25
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_garlic",
+      "name": "다진 마늘",
+      "group": "seasoning",
+      "quantity": 2,
+      "unit": "tbsp",
+      "scaling": {
+        "mode": "gentle",
+        "step": 0.25
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_soy_sauce",
+      "name": "국간장",
+      "group": "seasoning",
+      "quantity": 2,
+      "unit": "tbsp",
+      "scaling": {
+        "mode": "gentle",
+        "step": 0.25
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    }
+  ],
+  "preparation": [
+    {
+      "order": 1,
+      "instruction": "김치는 4cm 길이로 자르고 돼지고기는 한입 크기로 썬다.",
+      "minutes": 5
+    },
+    {
+      "order": 2,
+      "instruction": "두부는 1.5cm 두께로 썰고 대파는 어슷썬다.",
+      "minutes": 5
+    }
+  ],
+  "steps": [
+    {
+      "order": 1,
+      "title": "김치와 고기 볶기",
+      "instruction": "냄비에 돼지고기를 넣고 중불에서 3분 볶다가 김치를 넣어 5분 더 볶는다.",
+      "heat": "medium",
+      "minutes": 8,
+      "timerRecommended": true,
+      "completionCue": "고기 겉면이 익고 김치 숨이 죽는다."
+    },
+    {
+      "order": 2,
+      "title": "끓이기",
+      "instruction": "물을 붓고 센불에서 끓인다. 끓기 시작하면 고춧가루, 다진 마늘, 국간장을 넣는다.",
+      "heat": "high",
+      "minutes": 8,
+      "timerRecommended": true,
+      "completionCue": "국물이 전체적으로 세게 끓는다."
+    },
+    {
+      "order": 3,
+      "title": "푹 끓이기",
+      "instruction": "중약불로 낮춰 뚜껑을 반쯤 덮고 15분 끓인다.",
+      "heat": "medium_low",
+      "minutes": 15,
+      "timerRecommended": true,
+      "completionCue": "김치가 부드러워지고 국물에 붉은 기름이 살짝 돈다."
+    },
+    {
+      "order": 4,
+      "title": "두부와 대파 넣기",
+      "instruction": "두부와 대파를 넣고 4분 더 끓인다. 간을 보고 부족하면 국간장을 조금 추가한다.",
+      "heat": "medium",
+      "minutes": 4,
+      "timerRecommended": true,
+      "completionCue": "두부 중심까지 뜨겁고 대파 숨이 살짝 죽는다."
+    }
+  ],
+  "tips": [
+    "김치가 덜 익었다면 식초를 넣기보다 볶는 시간을 2~3분 늘린다.",
+    "국물 맛이 약하면 처음부터 소금을 넣지 말고 마지막에 국간장으로 조절한다."
+  ],
+  "substitutions": [
+    {
+      "ingredientId": "ingredient_pork_belly",
+      "alternatives": [
+        "돼지고기 목살",
+        "참치 통조림"
+      ]
+    }
+  ],
+  "sideDishes": [
+    "계란말이",
+    "김",
+    "멸치볶음"
+  ],
+  "storage": {
+    "refrigeratedDays": 3,
+    "frozenDays": 14,
+    "reheat": "먹을 만큼 덜어 완전히 끓여서 제공한다."
+  },
+  "metadata": {
+    "cuisine": [
+      "한식"
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "찌개",
+      "김치",
+      "대가족"
+    ],
+    "spiceLevel": 3,
+    "kidFriendly": false,
+    "freezerFriendly": true,
+    "weekdayFriendly": true,
+    "estimatedCostKrw": 15000
+  },
+  "verification": {
+    "level": "tested_multiple",
+    "testedCount": 2,
+    "notes": "6인분 기준 24cm 이상 냄비 권장",
+    "verifiedAt": null
+  },
+  "revision": {
+    "notes": "WS-02 schema 최초 작성",
+    "previousVersionId": null,
+    "updatedAt": "2026-07-24T00:00:00+09:00"
+  },
+  "warnings": [
+    "찌개를 재가열할 때는 전체가 충분히 끓도록 한다."
+  ],
+  "allergens": [
+    "대두"
+  ]
+}

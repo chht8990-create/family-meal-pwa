@@ -1,0 +1,295 @@
+{
+  "id": "recipe_jeyuk_bokkeum",
+  "name": "제육볶음",
+  "description": "돼지고기 앞다리살을 매콤한 양념에 재워 센 불에서 볶는 가정식 메뉴",
+  "version": "1.0.0",
+  "status": "active",
+  "baseServings": 6,
+  "difficulty": "normal",
+  "time": {
+    "prepMinutes": 20,
+    "cookMinutes": 15,
+    "restMinutes": 20,
+    "totalMinutes": 55
+  },
+  "ingredients": [
+    {
+      "ingredientId": "ingredient_pork_shoulder",
+      "name": "돼지고기 앞다리살",
+      "group": "main",
+      "quantity": 1200,
+      "unit": "g",
+      "scaling": {
+        "mode": "linear",
+        "step": 50,
+        "rounding": "nearest"
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_onion",
+      "name": "양파",
+      "group": "main",
+      "quantity": 2,
+      "unit": "piece",
+      "scaling": {
+        "mode": "discrete",
+        "step": 0.5,
+        "rounding": "up"
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_green_onion",
+      "name": "대파",
+      "group": "main",
+      "quantity": 2,
+      "unit": "stalk",
+      "scaling": {
+        "mode": "discrete",
+        "step": 0.5,
+        "rounding": "up"
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_carrot",
+      "name": "당근",
+      "group": "main",
+      "quantity": 1,
+      "unit": "piece",
+      "scaling": {
+        "mode": "discrete",
+        "step": 0.5,
+        "rounding": "up"
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_gochujang",
+      "name": "고추장",
+      "group": "seasoning",
+      "quantity": 6,
+      "unit": "tbsp",
+      "scaling": {
+        "mode": "gentle",
+        "step": 0.25
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_soy_sauce",
+      "name": "진간장",
+      "group": "seasoning",
+      "quantity": 6,
+      "unit": "tbsp",
+      "scaling": {
+        "mode": "gentle",
+        "step": 0.25
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_chili_powder",
+      "name": "고춧가루",
+      "group": "seasoning",
+      "quantity": 4,
+      "unit": "tbsp",
+      "scaling": {
+        "mode": "capped",
+        "maxQuantity": 7,
+        "step": 0.25
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_sugar",
+      "name": "설탕",
+      "group": "seasoning",
+      "quantity": 3,
+      "unit": "tbsp",
+      "scaling": {
+        "mode": "gentle",
+        "step": 0.25
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_garlic",
+      "name": "다진 마늘",
+      "group": "seasoning",
+      "quantity": 3,
+      "unit": "tbsp",
+      "scaling": {
+        "mode": "gentle",
+        "step": 0.25
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_sesame_oil",
+      "name": "참기름",
+      "group": "seasoning",
+      "quantity": 2,
+      "unit": "tbsp",
+      "scaling": {
+        "mode": "minimal",
+        "maxQuantity": 3,
+        "step": 0.25
+      },
+      "inventoryTracked": true,
+      "shoppingEligible": true
+    },
+    {
+      "ingredientId": "ingredient_black_pepper",
+      "name": "후추",
+      "group": "seasoning",
+      "quantity": 3,
+      "unit": "dash",
+      "scaling": {
+        "mode": "minimal",
+        "step": 1
+      },
+      "inventoryTracked": false,
+      "shoppingEligible": false
+    }
+  ],
+  "preparation": [
+    {
+      "order": 1,
+      "instruction": "돼지고기는 키친타월로 가볍게 눌러 겉면의 핏물을 제거한다.",
+      "minutes": 3
+    },
+    {
+      "order": 2,
+      "instruction": "양파는 1cm 두께로 채 썰고, 당근은 얇게 반달썰기, 대파는 4cm 길이로 썬다.",
+      "minutes": 7
+    },
+    {
+      "order": 3,
+      "instruction": "고추장, 진간장, 고춧가루, 설탕, 다진 마늘을 섞어 양념장을 만든다.",
+      "minutes": 3
+    },
+    {
+      "order": 4,
+      "instruction": "고기에 양념장을 버무려 냉장고에서 20분 재운다.",
+      "minutes": 20
+    }
+  ],
+  "steps": [
+    {
+      "order": 1,
+      "title": "팬 예열",
+      "instruction": "넓은 팬을 강불에서 1분간 충분히 예열한다.",
+      "heat": "high",
+      "minutes": 1,
+      "timerRecommended": true,
+      "completionCue": "팬 위로 손을 가까이 댔을 때 열기가 강하게 느껴진다."
+    },
+    {
+      "order": 2,
+      "title": "고기 볶기",
+      "instruction": "고기를 두 번으로 나눠 팬에 펼쳐 넣고, 처음 1분은 건드리지 않은 뒤 뒤집어가며 볶는다.",
+      "heat": "high",
+      "minutes": 6,
+      "timerRecommended": true,
+      "completionCue": "고기 겉면이 대부분 익고 붉은색이 거의 사라진다."
+    },
+    {
+      "order": 3,
+      "title": "채소 넣기",
+      "instruction": "당근과 양파를 넣고 중강불에서 4분 볶는다. 팬에 물이 많으면 불을 낮추지 않는다.",
+      "heat": "medium_high",
+      "minutes": 4,
+      "timerRecommended": true,
+      "completionCue": "양파 가장자리가 투명해지고 당근이 살짝 휘어진다."
+    },
+    {
+      "order": 4,
+      "title": "마무리",
+      "instruction": "대파를 넣고 2분 볶은 뒤 불을 끄고 참기름과 후추를 넣어 섞는다.",
+      "heat": "medium_high",
+      "minutes": 2,
+      "timerRecommended": true,
+      "completionCue": "양념이 고기와 채소에 고르게 묻고 팬 바닥에 물이 거의 남지 않는다."
+    }
+  ],
+  "tips": [
+    "6인분은 팬 하나에 전부 넣으면 물이 생기기 쉬우므로 고기를 나눠 볶는다.",
+    "참기름은 불을 끈 뒤 넣어야 향이 오래 남는다.",
+    "아이와 함께 먹는 경우 고춧가루를 줄이고 양파를 0.5개 늘린다."
+  ],
+  "substitutions": [
+    {
+      "ingredientId": "ingredient_pork_shoulder",
+      "alternatives": [
+        "돼지고기 뒷다리살",
+        "얇게 썬 목살"
+      ]
+    },
+    {
+      "ingredientId": "ingredient_sugar",
+      "alternatives": [
+        "올리고당",
+        "매실청"
+      ]
+    }
+  ],
+  "sideDishes": [
+    "콩나물국",
+    "계란말이",
+    "상추",
+    "깍두기"
+  ],
+  "storage": {
+    "refrigeratedDays": 2,
+    "frozenDays": 14,
+    "reheat": "팬에 물 1큰술을 넣고 중불로 데우거나 전자레인지에서 2~3분 가열한다."
+  },
+  "metadata": {
+    "cuisine": [
+      "한식"
+    ],
+    "mealTypes": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "돼지고기",
+      "볶음",
+      "매콤",
+      "대가족"
+    ],
+    "spiceLevel": 3,
+    "kidFriendly": false,
+    "freezerFriendly": true,
+    "weekdayFriendly": true,
+    "estimatedCostKrw": 18000
+  },
+  "verification": {
+    "level": "tested_multiple",
+    "testedCount": 3,
+    "notes": "6인 가족 기준 팬 2회 분할 조리 권장",
+    "verifiedAt": null
+  },
+  "revision": {
+    "notes": "WS-02 schema 최초 작성",
+    "previousVersionId": null,
+    "updatedAt": "2026-07-24T00:00:00+09:00"
+  },
+  "warnings": [
+    "돼지고기는 중심부까지 완전히 익힌다."
+  ],
+  "allergens": [
+    "대두"
+  ]
+}
