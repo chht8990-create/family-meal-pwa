@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://homeos.local/schema/event-log.schema.json",
+  "title": "HomeOS EventLog",
+  "type": "object",
+  "required": [
+    "id",
+    "entityType",
+    "entityId",
+    "eventType",
+    "occurredAt",
+    "idempotencyKey",
+    "reversed"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "entityType": {
+      "enum": [
+        "meal_plan",
+        "inventory",
+        "shopping",
+        "expense"
+      ]
+    },
+    "entityId": {
+      "type": "string"
+    },
+    "eventType": {
+      "type": "string"
+    },
+    "previousState": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "nextState": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actor": {
+      "enum": [
+        "user",
+        "system",
+        "migration"
+      ]
+    },
+    "payload": {
+      "type": "object"
+    },
+    "correlationId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "idempotencyKey": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reversed": {
+      "type": "boolean"
+    },
+    "reversedByEventId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

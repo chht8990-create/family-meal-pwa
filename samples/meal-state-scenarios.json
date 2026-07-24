@@ -1,0 +1,59 @@
+{
+  "scenarios": [
+    {
+      "id": "scenario_cooked",
+      "initial": {
+        "status": "planned",
+        "recipeId": "recipe_jeyuk_bokkeum",
+        "servings": 6
+      },
+      "event": "MARK_COOKED",
+      "expected": {
+        "status": "cooked",
+        "inventoryConsumed": true
+      }
+    },
+    {
+      "id": "scenario_dining_out",
+      "initial": {
+        "status": "planned",
+        "recipeId": "recipe_kimchi_jjigae",
+        "servings": 6
+      },
+      "event": "MARK_DINING_OUT",
+      "expected": {
+        "status": "dining_out",
+        "inventoryConsumed": false,
+        "expenseOptional": true
+      }
+    },
+    {
+      "id": "scenario_skipped",
+      "initial": {
+        "status": "planned",
+        "recipeId": "recipe_egg_toast",
+        "servings": 6
+      },
+      "event": "SKIP_MEAL",
+      "expected": {
+        "status": "skipped",
+        "inventoryConsumed": false,
+        "expenseCreated": false
+      }
+    },
+    {
+      "id": "scenario_replace",
+      "initial": {
+        "status": "planned",
+        "recipeId": "recipe_jeyuk_bokkeum",
+        "servings": 6
+      },
+      "event": "REPLACE_MEAL",
+      "expected": {
+        "status": "replaced",
+        "newMealStatus": "planned",
+        "shoppingRecalculated": true
+      }
+    }
+  ]
+}

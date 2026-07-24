@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://homeos.local/schema/meal-plan.schema.json",
+  "title": "HomeOS MealPlan",
+  "type": "object",
+  "required": [
+    "id",
+    "date",
+    "mealType",
+    "recipeId",
+    "servings",
+    "status",
+    "version",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^meal_[a-z0-9_\\-]+$"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "mealType": {
+      "enum": [
+        "breakfast",
+        "lunch",
+        "dinner"
+      ]
+    },
+    "recipeId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "servings": {
+      "type": "number",
+      "minimum": 1
+    },
+    "status": {
+      "enum": [
+        "planned",
+        "cooking",
+        "cooked",
+        "eaten",
+        "dining_out",
+        "delivery",
+        "convenience",
+        "lunchbox",
+        "skipped",
+        "replaced",
+        "cancelled",
+        "archived"
+      ]
+    },
+    "replacementGroupId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "replacedByMealPlanId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "previousMealPlanId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "inventoryTransactionId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "expenseId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "completedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
