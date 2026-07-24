@@ -1,4 +1,4 @@
-# HomeOS PWA v0.2 — WS-00
+# HomeOS PWA v0.3 — WS-00
 
 이번 버전은 HomeOS Blueprint의 첫 작업본이다.
 
