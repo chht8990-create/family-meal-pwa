@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#275d45" />
+  <meta name="description" content="월별 식단, 장보기, 냉장고 재고를 관리하는 가족 식단 앱" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>우리집 식단</title>
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">6인 가족 식단·장보기·재고</p>
+      <h1>우리집 식단</h1>
+    </div>
+    <button id="installBtn" class="secondary hidden">홈 화면 설치</button>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="controls card">
+        <label>대상 월 <input id="monthPicker" type="month" /></label>
+        <label>가족 인원
+          <select id="peopleSelect">
+            <option value="4">4명</option><option value="6" selected>6명</option><option value="8">8명</option>
+          </select>
+        </label>
+      </div>
+      <div id="todayCard" class="hero card"></div>
+      <div class="summary-grid">
+        <div class="card metric"><span>예상 장보기</span><strong id="budgetTotal">0원</strong></div>
+        <div class="card metric"><span>구매 필요</span><strong id="needCount">0개</strong></div>
+        <div class="card metric"><span>재고 부족</span><strong id="lowStockCount">0개</strong></div>
+        <div class="card metric"><span>조리 완료</span><strong id="cookedCount">0회</strong></div>
+      </div>
+      <div class="card">
+        <h2>내일 준비</h2>
+        <div id="tomorrowPrep" class="empty"></div>
+      </div>
+    </section>
+
+    <section id="meal" class="page">
+      <div class="section-title"><h2>30일 식단</h2><button id="resetMealChecks" class="text-btn">체크 초기화</button></div>
+      <div id="mealList" class="list"></div>
+    </section>
+
+    <section id="shopping" class="page">
+      <div class="section-title"><h2>2주 장보기</h2><span id="shoppingHint" class="muted"></span></div>
+      <div class="segmented"><button data-phase="1" class="active">1차 1~14일</button><button data-phase="2">2차 15~말일</button></div>
+      <div id="shoppingList" class="list"></div>
+    </section>
+
+    <section id="inventory" class="page">
+      <div class="section-title"><h2>냉장고·냉동실 재고</h2><button id="addInventoryBtn" class="primary small">재료 추가</button></div>
+      <div id="inventoryList" class="list"></div>
+    </section>
+
+    <section id="settings" class="page">
+      <div class="card">
+        <h2>월간 식단 가져오기</h2>
+        <p class="muted">매달 받은 JSON 파일을 선택하면 기존 재고는 유지되고 식단·필요량·레시피만 교체됩니다.</p>
+        <label class="file-label">JSON 파일 선택<input id="importFile" type="file" accept="application/json,.json" /></label>
+        <button id="downloadSample" class="secondary full">현재 월간 데이터 내보내기</button>
+      </div>
+      <div class="card">
+        <h2>전체 백업</h2>
+        <p class="muted">휴대폰 교체나 데이터 복원을 위해 식단·재고·체크 상태를 한 파일로 저장합니다.</p>
+        <button id="exportBackup" class="secondary full">전체 백업 다운로드</button>
+        <label class="file-label secondary-label">전체 백업 복원<input id="restoreBackup" type="file" accept="application/json,.json" /></label>
+      </div>
+      <div class="card danger-zone">
+        <h2>초기화</h2>
+        <button id="resetAll" class="danger full">모든 데이터 초기화</button>
+      </div>
+      <p class="version">우리집 식단 PWA v0.1</p>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button data-page="home" class="active">홈</button>
+    <button data-page="meal">식단</button>
+    <button data-page="shopping">장보기</button>
+    <button data-page="inventory">재고</button>
+    <button data-page="settings">설정</button>
+  </nav>
+
+  <dialog id="inventoryDialog">
+    <form method="dialog" id="inventoryForm">
+      <h2>재료 등록·수정</h2>
+      <input id="invId" type="hidden" />
+      <label>재료명<input id="invName" required /></label>
+      <label>수량<input id="invQty" type="number" step="0.01" min="0" required /></label>
+      <label>단위<input id="invUnit" placeholder="kg, 개, 봉" required /></label>
+      <label>보관 장소<select id="invLocation"><option>냉장실</option><option>냉동실</option><option>실온</option><option>김치냉장고</option></select></label>
+      <label>최소 보유량<input id="invMin" type="number" step="0.01" min="0" value="0" /></label>
+      <div class="dialog-actions"><button value="cancel" class="secondary">취소</button><button id="saveInventory" value="default" class="primary">저장</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="recipeDialog">
+    <article>
+      <div class="section-title"><h2 id="recipeTitle"></h2><button id="closeRecipe" class="text-btn">닫기</button></div>
+      <div id="recipeBody"></div>
+    </article>
+  </dialog>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
