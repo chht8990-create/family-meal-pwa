@@ -1,18 +1,23 @@
-# HomeOS PWA v0.3 — WS-00
+# HomeOS WS-01 Product Foundation
 
-이번 버전은 HomeOS Blueprint의 첫 작업본이다.
+이 패키지는 HomeOS의 공식 제품 설계 기준점입니다.
 
-## 변경 사항
+## 현재 상태
 
-- 홈 화면 제목을 `오늘 해야 할 것`으로 변경
-- 점심·저녁을 독립 카드로 표시
-- 홈 화면에서 `레시피 보기` 제공
-- 홈 화면에서 `조리 완료` 실행 가능
-- 조리 완료 확인 후 재고 자동 차감
-- 완료 상태 표시 및 중복 차감 방지
-- Blueprint·Workstream·WS-00 결정 문서 추가
+- WS-00 Prototype & Home Flow: COMPLETE
+- WS-01 Product Foundation Lock: COMPLETE
+- Next: WS-02 Recipe Domain Foundation
 
-## GitHub Pages 업데이트
+## 문서 읽는 순서
 
-압축을 풀고 저장소 루트의 기존 파일을 이 폴더의 파일로 교체한다.
-브라우저 캐시 때문에 이전 화면이 보이면 새로고침하거나 홈 화면 앱을 완전히 종료한 뒤 다시 실행한다.
+1. HOMEOS_PROJECT_DECLARATION.md
+2. PRODUCT_PRINCIPLES.md
+3. MVP_SCOPE.md
+4. LIFE_ENGINE_RULEBOOK.md
+5. UX_FLOW.md
+6. FEATURE_BACKLOG.md
+7. WORKSTREAM.md
+
+현재 배포된 PWA 코드는 포함하지 않았습니다.
+이 문서 세트는 다음 구현 단계에서 기존 프로토타입을 무리하게 확장하지 않고,
+필요한 경우 구조를 교체할 수 있도록 만든 제품 기준 문서입니다.
