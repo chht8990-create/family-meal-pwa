@@ -1,29 +1,52 @@
-# HomeOS WS-05 Cooking Mode
+# HomeOS WS-06 Integrated Prototype v1.0
 
-요리 중 실제로 사용할 수 있는 단계별 조리 화면의 공식 설계 및 구현 기준 패키지입니다.
+## 실행
 
-## 구성
+압축을 풀고 `index.html`을 브라우저로 열거나 GitHub Pages에 업로드합니다.
 
-- docs/WS05_COOKING_MODE_FOUNDATION.md
-- docs/COOKING_SESSION_MODEL.md
-- docs/STEP_NAVIGATION_RULES.md
-- docs/TIMER_POLICY.md
-- docs/KEEP_AWAKE_AND_RESUME_POLICY.md
-- docs/ACCESSIBILITY_AND_SAFETY.md
-- docs/INTEGRATION_RULES.md
-- docs/WS05_COMPLETION_REPORT.md
-- schemas/cooking-session.schema.json
-- schemas/cooking-timer.schema.json
-- src/cooking-session-engine.ts
-- src/cooking-timer-engine.ts
-- tests/WS05_TEST_PLAN.md
-- samples/cooking-mode-scenario.json
+## 포함 기능
 
-## 현재 기준점
+- 아침·점심·저녁 홈 카드
+- 가족 인원 2~10명 설정
+- 상세 레시피
+- 단계별 Cooking Mode
+- 단계별 타이머
+- 조리 진행 위치 저장
+- 조리 완료 및 10초 Undo
+- 오늘은 안 먹어요
+  - 외식
+  - 배달
+  - 간편식
+  - 도시락
+  - 건너뛰기
+- 레시피 기반 재고 차감
+- 재고 기반 부족 장보기 계산
+- 장보기 체크
+- 구매 완료 후 재고 증가
+- JSON 백업·복원
+- localStorage
+- Service Worker 오프라인 캐시
+- 설치형 PWA manifest
 
-- WS-01 Product Foundation Lock: COMPLETE
-- WS-02 Recipe Domain Foundation: COMPLETE
-- WS-03 Meal State & Real-Life Exceptions: COMPLETE
-- WS-04 Shopping & Inventory Link: COMPLETE
-- WS-05 Cooking Mode: COMPLETE
-- Next: WS-06 MVP Hardening & Integrated Prototype
+## WS-06 검증 범위
+
+1. 홈 화면 3끼 표시
+2. 레시피 상세 품질
+3. 조리 모드 단계 이동
+4. 타이머
+5. 조리 완료 재고 차감
+6. 실행 취소 재고 복구
+7. 외식 등 예외 처리 시 재고 미차감
+8. 부족량 장보기 재계산
+9. 구매 완료 재고 반영
+10. 새로고침 후 상태 유지
+
+## 제한
+
+이 버전은 통합 검증용 프로토타입입니다.
+
+- 실제 동기화 없음
+- 실제 알림 권한 연동 없음
+- 재고 lot별 유통기한 UI 없음
+- 완전한 단위 변환 없음
+- 실제 자동 업데이트 배포 체계 없음
